@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Motor Fault</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Motor Fault Prediction</a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/predict">Predict Fault</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/trends">Performance Trends</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h2 class="text-center">Bearing Fault Prediction</h2>
+    <form action="/fault" method="POST">
+        <div class="form-group">
+            <label for="rpm">RPM</label>
+            <input type="text" class="form-control" id="rpm" name="rpm" required>
+        </div>
+        <div class="form-group">
+            <label for="vibration">Vibration</label>
+            <input type="text" class="form-control" id="vibration" name="vibration" required>
+        </div>
+        <p>Considering number of balls 8</p>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
